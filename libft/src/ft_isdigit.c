@@ -1,28 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 17:11:00 by klaksi            #+#    #+#             */
-/*   Updated: 2022/10/19 18:21:40 by klaksi           ###   ########.fr       */
+/*   Created: 2022/10/21 16:41:36 by klaksi            #+#    #+#             */
+/*   Updated: 2022/10/22 20:47:12 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-
-#include "../include/ft_libft.h"
-
-size_t	ft_strlen(const char *s)
+int	ft_isdigit(int c)
 {
-	int i = 0;
-	while(s[i])
-		i++;
-	return(i);
-}
-
-int main(void)
-{
-	char test[] = "hiiie";
-	printf("%zu\n", ft_strlen(test));
+	if (c >= '0' && c <= '9')
+	{
+		return (1);
+	}
+	return (0);
 }
