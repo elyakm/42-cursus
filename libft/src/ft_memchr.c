@@ -1,32 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:57:42 by klaksi            #+#    #+#             */
-/*   Updated: 2022/10/25 20:32:15 by klaksi           ###   ########.fr       */
+/*   Created: 2022/10/26 18:20:55 by klaksi            #+#    #+#             */
+/*   Updated: 2022/10/26 20:29:36 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	size_t	i;
-	unsigned	char *c_dst;
-	unsigned	char *c_src;
-
-    i = 0;
-	c_dst = (unsigned char*)dst;
-	c_src = (unsigned char*)src;
-	if (!(dst || src))
-		return (NULL);
-	while ((n > i))
+	size_t			i;
+	unsigned char	*str;
+	unsigned char	to_find;
+	
+	i = 0;
+	str = (unsigned char*)s;
+	to_find = (unsigned char)c;
+	while (n > i && str[i] != '\0')
 	{
-		c_dst[i] = c_src[i];
+		if (str[i] == (to_find))
+		{
+			return (str + i);
+		}
 		i++;
 	}
-	return (dst);
+	if (str[i] == (to_find))
+		{
+			return (str + i);
+		}
+	return(NULL);
 }

@@ -6,7 +6,7 @@
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/22 14:38:35 by klaksi            #+#    #+#             */
-/*   Updated: 2022/10/24 21:41:57 by klaksi           ###   ########.fr       */
+/*   Updated: 2022/10/27 09:57:08 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -123,9 +123,60 @@
 //     printf("real memmove overlap : %s\n ", str2);
 // }
 
+// int	main(void)
+// {
+// 	char	s1[] = "abz";
+// 	char	s2[] = "abc";
+// 	printf("%d\n", ft_strncmp(s1, s2, 8));
+// }
+
+// int main(void)
+// {
+// 	char	src[] = "source";
+// 	char	dest[] = "destination";
+// 	printf("%s\n", dest);
+// 	ft_memcpy(dest, src, 10);
+// 	printf("%s\n", dest);
+// }
+
+// int main(void)
+// {
+// 	char	src[] = "source";
+// 	char	dest[50] = "destination";
+// 	printf("%s\n", dest);
+// 	ft_strlcat(dest, src, 30);
+// 	printf("%s\n", dest);
+// }
+
+// int main(void)
+// {
+// 	char	str1[] = "source";
+// 	char	str2[50] = "destination";
+// 	size_t len = 10;
+
+// 	printf("%d\n", ft_memcmp(str1, str2, len));
+// 	printf("%d\n", memcmp(str1, str2, len));
+// }
+
+// int main(void)
+// {
+//     char    haystack[] = "j'aime les sushis";
+//     char    needle[] = "les";
+// 	size_t	len = 10;
+//     printf("%s\n", ft_strnstr(haystack, needle, len));
+// }
+
+// int main(void)
+// {
+// 	char str[] = "abcdefghijkl";
+	
+// 	char find = 'k';
+// 	printf("%s\n", ft_memchr(str, find, 15));
+// }
+
 int	main(void)
 {
-	char	s1[] = "abz";
-	char	s2[] = "abc";
-	printf("%d\n", ft_strncmp(s1, s2, 8));
+	char	str[] = "    	+56464651";
+	printf("%d\n", ft_atoi(str));
+	printf("%d\n", atoi(str));
 }

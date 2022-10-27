@@ -1,32 +1,43 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: klaksi <klaksi@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/25 15:57:42 by klaksi            #+#    #+#             */
-/*   Updated: 2022/10/25 20:32:15 by klaksi           ###   ########.fr       */
+/*   Created: 2022/10/26 20:40:27 by klaksi            #+#    #+#             */
+/*   Updated: 2022/10/27 10:42:10 by klaksi           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../include/libft.h"
 
-void	*ft_memcpy(void *dst, const void *src, size_t n)
+int	ft_atoi(const char *str)
 {
 	size_t	i;
-	unsigned	char *c_dst;
-	unsigned	char *c_src;
-
-    i = 0;
-	c_dst = (unsigned char*)dst;
-	c_src = (unsigned char*)src;
-	if (!(dst || src))
-		return (NULL);
-	while ((n > i))
+	int	sign;
+	int	result;
+	
+	i = 0;
+	sign = 1;
+	result = 0;
+	while ((str[i] >= 9 && str[i] <= 13) || (str[i] == ' '))
 	{
-		c_dst[i] = c_src[i];
 		i++;
 	}
-	return (dst);
+	if ((str[i] == '+') || (str[i] == '-'))
+	{
+		if (str[i] == '-')
+		{
+			sign = sign * -1;
+		}
+		i++;
+	}
+	while (ft_isdigit(str[i]) == 1)
+	{
+		result = result * 10 + (str[i] - '0');
+		i++;
+	}
+	return(result * sign);
+	
 }
